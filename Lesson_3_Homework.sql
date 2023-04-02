@@ -111,6 +111,35 @@ WHERE rating > 100
 AND city = 'Rome';
 
 
+use Seminar_3;
+/*
+1. Отсортируйте поле “зарплата” в порядке убывания и возрастания
+*/
+SELECT salary
+FROM workers
+ORDER BY salary;
+
+SELECT salary
+FROM workers
+ORDER BY salary DESC;
+/*
+2.** Отсортируйте по возрастанию поле “Зарплата” 
+и выведите 5 строк с наибольшей заработной платой (возможен подзапрос)
+*/
+SELECT salary
+FROM workers
+ORDER BY salary DESC
+LIMIT 5;
+/*
+3. Выполните группировку всех сотрудников по специальности , 
+суммарная зарплата которых превышает 100000
+*/
+SELECT speciality, SUM(salary) as SUM
+FROM workers
+WHERE salary > 100000
+GROUP BY speciality;
+
+
 
 
 
